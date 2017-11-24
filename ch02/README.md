@@ -24,3 +24,11 @@ PF_IPX|IPX Novell协议族
 ```
 $ man socket
 ```
+
+## 协议的最终选择通过第三个参数确定
+- 大部分情况下第三参数设置为 0
+- 同一协议族中存在多个数据传输方式相同的协议，设置不同的值
+	```
+		int tcp_socket = socket (PF_INET, SOCK_STREAM, IPPROTO_TCP);
+		int udp_socket = socket (PF_INET, SOCK_STREAM, IPPROTO_UDP);
+	```
